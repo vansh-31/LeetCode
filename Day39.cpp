@@ -15,17 +15,66 @@ using namespace std;
 class Solution
 {
 public:
-    int solve(vector<int> &nums,int n,int index)
+    int solve(vector<int> &nums, int n, int index)
     {
-        if (n==0)
+        if (index == n)
         {
-            return 1;
+            return 0;
         }
-        
+        if (index > n or nums[index] == 0)
+        {
+            return 10000000;
+        }
+        int ans = 10000000;
+        for (int i = index + 1; i <= index + nums[index]; i++)
+        {
+            ans = min(ans, 1 + solve(nums, n, i));
+        }
+        return ans;
+    }
+    int solveMem(vector<int> &nums, int n, int index, vector<int> &dp)
+    {
+        if (index == n)
+        {
+            return 0;
+        }
+        if (index > n)
+        {
+            return 10000000;
+        }
+        if (dp[index] != -1)
+        {
+            return dp[index];
+        }
+        int ans = 10000000;
+        for (int i = index + 1; i <= index + nums[index]; i++)
+        {
+            ans = min(ans, 1 + solveMem(nums, n, i, dp));
+        }
+        return dp[index] = ans;
+    }
+    int solveTab(vector<int> &nums, int n)
+    {
+        vector<int> dp(n, 10000000);
+        dp[n-1] = 0;
+        for (int index = n - 1; index >= 0; index--)
+        {
+            for (int i = index + 1; i <= index + nums[index]; i++)
+            {
+                if (i < n)
+                {
+                    dp[index] = min(dp[index], 1 + dp[i]);
+                }
+            }
+        }
+        return dp[0];
     }
     int jump(vector<int> &nums)
     {
-        
+        // return solve(nums,nums.size()-1,0);
+        // vector<int> dp(nums.size(),-1);
+        // return solveMem(nums,nums.size()-1,0,dp);
+        return solveTab(nums,nums.size());
     }
 };
 int main()

@@ -23,10 +23,10 @@ public:
         long long count = 0;
         
         for (int i = 0; i < n; i++) {
-            if (nums[i] >= minK && nums[i] <= maxK) {
+            if (nums[i] >= minK && nums[i] <= maxK)
+            {
                 lastMin = (nums[i] == minK) ? i : lastMin;
                 lastMax = (nums[i] == maxK) ? i : lastMax;
-
                 count += max(0, min(lastMin, lastMax) - leftBound);
             } else {
                 leftBound = i;

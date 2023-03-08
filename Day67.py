@@ -1,6 +1,6 @@
 from math import ceil
 class Solution:
-    def minEatingSpeed(self, piles: List[int], h: int) -> int:
+    def minEatingSpeed(self, piles: list[int], h: int) -> int:
         st,end = 1,max(piles)
         ans = end
         def isPossible(speed):

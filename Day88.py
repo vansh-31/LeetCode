@@ -4,7 +4,7 @@
 # Return the maximum sum of like-time coefficient that the chef can obtain after dishes preparation.
 # Dishes can be prepared in any order and the chef can discard some dishes to get this maximum value.
 class Solution:
-    def maxSatisfaction(self, sat: List[int]) -> int:
+    def maxSatisfaction(self, sat: list[int]) -> int:
         n = len(sat)
         sat.sort()
         dp = [[0 for x in range(n+2)] for y in range(n+2)]

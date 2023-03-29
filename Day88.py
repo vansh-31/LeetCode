@@ -5,14 +5,12 @@
 # Dishes can be prepared in any order and the chef can discard some dishes to get this maximum value.
 class Solution:
     def maxSatisfaction(self, sat: list[int]) -> int:
-        n = len(sat)
-        sat.sort()
-        curr = [0 for x in range(n+2)]
-        nextt = [0 for x in range(n+2)]
-        for i in range(n-1,-1,-1):
-            for time in range(n,0,-1):
-                take = time*sat[i] + nextt[time+1]
-                not_take = nextt[time]
-                curr[time] = max(take,not_take)
-            nextt = curr.copy()
-        return nextt[1]
+        sat.sort(reverse=True)
+        total = 0
+        cur_sum = 0
+        for val in sat:
+            cur_sum += val
+            if (cur_sum < 0):
+                break
+            total += cur_sum
+        return total

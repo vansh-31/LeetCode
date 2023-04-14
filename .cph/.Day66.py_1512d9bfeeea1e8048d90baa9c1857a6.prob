@@ -1,1 +1,0 @@
-{"name":"Local: Day66","url":"/home/vansh/Documents/GitHub/LeetCode/Day66.py","tests":[{"id":1678153387704,"input":"3 5\n1 2 3","output":"3"},{"id":1678153775555,"input":"2 1\n2","output":"2"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"/home/vansh/Documents/GitHub/LeetCode/Day66.py","group":"local","local":true}

@@ -1,0 +1,1 @@
+{"name":"Local: Day178","url":"/home/vansh/Documents/GitHub/LeetCode/Day178.py","tests":[{"id":1687835313786,"input":"","output":"[[1, 2], [1, 4], [1, 6], [7, 2]]\n[[1, 1], [1, 1]]\n[[1, 3], [2, 3]]"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"/home/vansh/Documents/GitHub/LeetCode/Day178.py","group":"local","local":true}

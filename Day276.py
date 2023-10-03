@@ -4,7 +4,7 @@
 from collections import defaultdict
 from functools import cache
 from typing import List
-
+from math import comb
 
 class Solution:
     def numIdenticalPairs(self, nums: List[int]) -> int:

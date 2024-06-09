@@ -17,7 +17,6 @@ class Solution:
         for i, x in enumerate(nums):
             prefix += x
             prefix %= k
-            print(mod_k)
             if prefix in mod_k:
                 if i > mod_k[prefix] + 1:
                     return True
